@@ -1,0 +1,26 @@
+appId: com.cortex.app
+productName: Cortex
+directories:
+  output: release
+  buildResources: assets
+files:
+  - dist/**/*
+  - assets/**/*
+  - "!node_modules/**/*"
+mac:
+  category: public.app-category.productivity
+  target:
+    - target: dmg
+      arch:
+        - universal
+  hardenedRuntime: true
+  gatekeeperAssess: false
+dmg:
+  sign: false
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
